@@ -1,24 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import MyComponent from './components/MyComponent';
+
+// Functional component (as opposed Class component)
 function App() {
+
+  // React hook
+  const [value, setValue] = useState(0);
+
+  //value = state
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => setValue(value + 1)}>Click me!</button>
+      <div>{value}</div>
     </div>
   );
 }
